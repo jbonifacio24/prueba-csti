@@ -1,6 +1,6 @@
 En caso de errores
-Instalar Paquetes:
 
+Error en Paquetes
 PruebaCSTIWeb
     Autofac - 4.6.2
     Autofac.Mvc5 - 4.0.2
@@ -8,3 +8,7 @@ PruebaCSTIWeb
 PruebaCSTIInfraestructure
     Autofac - 4.6.2
     Autofac.Mvc5 - 4.0.2
+	
+Errores al levantar solucion
+    Instalar paquete: Microsoft.Net.Compilers.4.2.0
+    Limpiar y luego recompilar proyecto PruebaCSTIWeb
