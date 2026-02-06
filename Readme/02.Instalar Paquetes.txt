@@ -1,14 +1,19 @@
 En caso de errores
 
-Error en Paquetes
-PruebaCSTIWeb
-    Autofac - 4.6.2
-    Autofac.Mvc5 - 4.0.2
+* Error en Paquetes
+	PruebaCSTIWeb
+		Autofac - 4.6.2
+		Autofac.Mvc5 - 4.0.2
 
-PruebaCSTIInfraestructure
-    Autofac - 4.6.2
-    Autofac.Mvc5 - 4.0.2
+	PruebaCSTIInfraestructure
+		Autofac - 4.6.2
+		Autofac.Mvc5 - 4.0.2
 	
-Errores al levantar solucion
+* Errores al levantar solucion
     Instalar paquete: Microsoft.Net.Compilers.4.2.0
     Limpiar y luego recompilar proyecto PruebaCSTIWeb
+	
+* Cambiar Data Source 
+<connectionStrings>
+  <add name="DefaultConnection" connectionString="Data Source=LAPTOP-720JPI09;Initial Catalog=CSTIBDPRUEBA;Integrated Security=True" providerName="System.Data.SqlClient" />
+</connectionStrings>
