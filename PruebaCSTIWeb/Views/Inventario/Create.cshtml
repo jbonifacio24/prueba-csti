@@ -1,0 +1,105 @@
+﻿@Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+@{
+    ViewBag.Title = "Create";
+}
+
+@model PruebaCSTI.Application.Dtos.InventarioDto
+
+<h2>Nuevo Inventario</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.CodCia)
+            @Html.TextBoxFor(x => x.CodCia, new { @class = "form-control", maxlength = "5" , style = "text-transform: uppercase;" })
+
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.CompaniaVenta3)
+            @Html.TextBoxFor(x => x.CompaniaVenta3, new { @class = "form-control", maxlength = "5", style = "text-transform: uppercase;" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.AlmacenVenta)
+            @Html.TextBoxFor(x => x.AlmacenVenta, new { @class = "form-control", maxlength = "10", style = "text-transform: uppercase;" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.TipoMovimiento)
+            @Html.TextBoxFor(x => x.TipoMovimiento, new { @class = "form-control", maxlength = "2", style = "text-transform: uppercase;" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.TipoDocumento)
+            @Html.TextBoxFor(x => x.TipoDocumento, new { @class = "form-control", maxlength = "2", style = "text-transform: uppercase;" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.NroDocumento)
+            @Html.TextBoxFor(x => x.NroDocumento, new { @class = "form-control", maxlength = "50", style = "text-transform: uppercase;" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.CodItem2)
+            @Html.TextBoxFor(x => x.CodItem2, new { @class = "form-control", maxlength = "50", style = "text-transform: uppercase;" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.Proveedor)
+            @Html.TextBoxFor(x => x.Proveedor, new { @class = "form-control", maxlength = "100" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.AlmacenDestino)
+            @Html.TextBoxFor(x => x.AlmacenDestino, new { @class = "form-control", maxlength = "50" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.Cantidad)
+            @Html.TextBoxFor(x => x.Cantidad, new { @class = "form-control", type = "number", maxlength = "5" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.DocRef1)
+            @Html.TextBoxFor(x => x.DocRef1, new { @class = "form-control", maxlength = "50" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.DocRef2)
+            @Html.TextBoxFor(x => x.DocRef2, new { @class = "form-control", maxlength = "50" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.DocRef3)
+            @Html.TextBoxFor(x => x.DocRef3, new { @class = "form-control", maxlength = "50" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.DocRef4)
+            @Html.TextBoxFor(x => x.DocRef4, new { @class = "form-control", maxlength = "50" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.DocRef5)
+            @Html.TextBoxFor(x => x.DocRef5, new { @class = "form-control", maxlength = "50" })
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+            @Html.LabelFor(x => x.FechaTransaccion)
+            @Html.TextBoxFor(x => x.FechaTransaccion,
+                new { @class = "form-control", type = "date" })
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Guardar
+    </button>
+
+    @Html.ActionLink("Cancelar", "Index", null,
+        new { @class = "btn btn-secondary ms-2" })
+}
+

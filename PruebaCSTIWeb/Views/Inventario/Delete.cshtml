@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+}
+
+@model PruebaCSTI.Application.Dtos.InventarioDto
+
+<h2>Eliminar</h2>
+
+<h4>¿Seguro desea eliminar este registro?</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.CodCia)
+    @Html.HiddenFor(x => x.CompaniaVenta3)
+    @Html.HiddenFor(x => x.AlmacenVenta)
+    @Html.HiddenFor(x => x.TipoMovimiento)
+    @Html.HiddenFor(x => x.TipoDocumento)
+    @Html.HiddenFor(x => x.NroDocumento)
+    @Html.HiddenFor(x => x.CodItem2)
+
+
+<table class="table table-bordered w-50">
+    <tr>
+        <th>Cod Cía</th>
+        <td>@Model.CodCia</td>
+    </tr>
+    <tr>
+        <th>Compañía Venta</th>
+        <td>@Model.CompaniaVenta3</td>
+    </tr>
+    <tr>
+        <th>Almacén Venta</th>
+        <td>@Model.AlmacenVenta</td>
+    </tr>
+    <tr>
+        <th>Tipo Movimiento</th>
+        <td>@Model.TipoMovimiento</td>
+    </tr>
+    <tr>
+        <th>Tipo Documento</th>
+        <td>@Model.TipoDocumento</td>
+    </tr>
+    <tr>
+        <th>Nro Documento</th>
+        <td>@Model.NroDocumento</td>
+    </tr>
+    <tr>
+        <th>Cod Item</th>
+        <td>@Model.CodItem2</td>
+    </tr>
+</table>
+
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+}
+

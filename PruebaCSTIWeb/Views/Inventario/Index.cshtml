@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "CSTI.Corp";
+}
+
+@model IEnumerable<PruebaCSTI.Application.Dtos.InventarioDto>
+
+<h2>Inventario</h2>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <strong>Consulta</strong>
+    </div>
+
+    <div class="card-body">
+        @using (Html.BeginForm("Index", "Inventario", FormMethod.Get))
+        {
+            <div class="row">
+
+                <div class="col-md-3 mb-2">
+                    <label>Fecha Inicio</label>
+                    <input type="date" name="fechaInicio" class="form-control" />
+                </div>
+
+                <div class="col-md-3 mb-2">
+                    <label>Fecha Fin</label>
+                    <input type="date" name="fechaFin" class="form-control" />
+                </div>
+
+                <div class="col-md-3 mb-2">
+                    <label>Tipo Movimiento</label>
+                    <input type="text" name="tipoMovimiento" class="form-control", maxlength = "2" />
+                </div>
+
+                <div class="col-md-3 mb-2">
+                    <label>Nro Documento</label>
+                    <input type="text" name="nroDocumento" class="form-control", maxlength = "50" />
+                </div>
+
+            </div>
+
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary">
+                    Buscar
+                </button>
+
+                <a href="@Url.Action("Index","Inventario")" class="btn btn-secondary">
+                    Limpiar
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-success" })
+</p>
+
+<div class="card mb-3">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>COD_CIA</th>
+                    <th>COMPANIA_VENTA_3</th>
+                    <th>ALMACEN_VENTA</th>
+                    <th>TIPO_MOVIMIENTO</th>
+                    <th>TIPO_DOCUMENTO</th>
+                    <th>NRO_DOCUMENTO</th>
+                    <th>COD_ITEM_2</th>
+                    <th>PROVEEDOR</th>
+                    <th>ALMACEN_DESTINO</th>
+                    <th>CANTIDAD</th>
+                    <th>DOC_REF_1</th>
+                    <th>DOC_REF_2</th>
+                    <th>DOC_REF_3</th>
+                    <th>DOC_REF_4</th>
+                    <th>DOC_REF_5</th>
+                    <th>FECHA_TRANSACCION</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CodCia</td>
+                        <td>@item.CompaniaVenta3</td>
+                        <td>@item.AlmacenVenta</td>
+                        <td>@item.TipoMovimiento</td>
+                        <td>@item.TipoDocumento</td>
+                        <td>@item.NroDocumento</td>
+                        <td>@item.CodItem2</td>
+                        <td>@item.Proveedor</td>
+                        <td>@item.AlmacenDestino</td>
+                        <td>@item.Cantidad</td>
+                        <td>@item.DocRef1</td>
+                        <td>@item.DocRef2</td>
+                        <td>@item.DocRef3</td>
+                        <td>@item.DocRef4</td>
+                        <td>@item.DocRef5</td>
+                        <td>@(item.FechaTransaccion?.ToString("dd/MM/yyyy"))</td>
+
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new
+                       {
+                           codCia = item.CodCia,
+                           companiaVenta3 = item.CompaniaVenta3,
+                           almacenVenta = item.AlmacenVenta,
+                           tipoMovimiento = item.TipoMovimiento,
+                           tipoDocumento = item.TipoDocumento,
+                           nroDocumento = item.NroDocumento,
+                           codItem2 = item.CodItem2
+
+                       }) |
+                            @Html.ActionLink("Eliminar", "Delete", new
+                       {
+                           codCia = item.CodCia,
+                           companiaVenta3 = item.CompaniaVenta3,
+                           almacenVenta = item.AlmacenVenta,
+                           tipoMovimiento = item.TipoMovimiento,
+                           tipoDocumento = item.TipoDocumento,
+                           nroDocumento = item.NroDocumento,
+                           codItem2 = item.CodItem2
+                       })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

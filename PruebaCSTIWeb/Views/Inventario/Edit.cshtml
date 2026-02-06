@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+@model PruebaCSTI.Application.Dtos.InventarioDto
+
+<h2>Editar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.CodCia)
+    @Html.HiddenFor(x => x.CompaniaVenta3)
+    @Html.HiddenFor(x => x.AlmacenVenta)
+    @Html.HiddenFor(x => x.TipoMovimiento)
+    @Html.HiddenFor(x => x.TipoDocumento)
+    @Html.HiddenFor(x => x.NroDocumento)
+    @Html.HiddenFor(x => x.CodItem2)
+
+<div class="row">
+
+    <!-- CLAVES SOLO LECTURA -->
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.CodCia)
+        @Html.TextBoxFor(x => x.CodCia,
+            new { @class = "form-control", @readonly = "readonly", disabled = "disabled" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.CompaniaVenta3)
+        @Html.TextBoxFor(x => x.CompaniaVenta3,
+            new { @class = "form-control", @readonly = "readonly", disabled = "disabled" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.AlmacenVenta)
+        @Html.TextBoxFor(x => x.AlmacenVenta,
+            new { @class = "form-control", @readonly = "readonly", disabled = "disabled" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.TipoMovimiento)
+        @Html.TextBoxFor(x => x.TipoMovimiento,
+            new { @class = "form-control", @readonly = "readonly", disabled = "disabled" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.TipoDocumento)
+        @Html.TextBoxFor(x => x.TipoDocumento,
+            new { @class = "form-control", @readonly = "readonly", disabled = "disabled" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.NroDocumento)
+        @Html.TextBoxFor(x => x.NroDocumento,
+            new { @class = "form-control", @readonly = "readonly", disabled = "disabled" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.CodItem2)
+        @Html.TextBoxFor(x => x.CodItem2,
+            new { @class = "form-control", @readonly = "readonly", disabled = "disabled" })
+    </div>
+
+    <!-- CAMPOS EDITABLES -->
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.Proveedor)
+        @Html.TextBoxFor(x => x.Proveedor, new { @class = "form-control", maxlength = "100" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.AlmacenDestino)
+        @Html.TextBoxFor(x => x.AlmacenDestino, new { @class = "form-control", maxlength = "50" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.Cantidad)
+        @Html.TextBoxFor(x => x.Cantidad, new { @class = "form-control", type = "number", maxlength = "5" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.DocRef1)
+        @Html.TextBoxFor(x => x.DocRef1, new { @class = "form-control", maxlength = "50" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.DocRef2)
+        @Html.TextBoxFor(x => x.DocRef2, new { @class = "form-control", maxlength = "50" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.DocRef3)
+        @Html.TextBoxFor(x => x.DocRef3, new { @class = "form-control", maxlength = "50" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.DocRef4)
+        @Html.TextBoxFor(x => x.DocRef4, new { @class = "form-control", maxlength = "50" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.DocRef5)
+        @Html.TextBoxFor(x => x.DocRef5, new { @class = "form-control", maxlength = "50" })
+    </div>
+
+    <div class="col-md-4 col-sm-6 mb-3">
+        @Html.LabelFor(x => x.FechaTransaccion)
+        @Html.TextBoxFor(x => x.FechaTransaccion,
+            new { @class = "form-control", type = "date", Value = Model.FechaTransaccion?.ToString("yyyy-MM-dd") })
+    </div>
+
+</div>
+
+    <button type="submit" class="btn btn-primary">
+        Actualizar
+    </button>
+
+    @Html.ActionLink("Cancelar", "Index", null,
+        new { @class = "btn btn-secondary ms-2" })
+}
+

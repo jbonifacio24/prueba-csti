@@ -1,0 +1,10 @@
+En caso de errores
+Instalar Paquetes:
+
+PruebaCSTIWeb
+    Autofac - 4.6.2
+    Autofac.Mvc5 - 4.0.2
+
+PruebaCSTIInfraestructure
+    Autofac - 4.6.2
+    Autofac.Mvc5 - 4.0.2
